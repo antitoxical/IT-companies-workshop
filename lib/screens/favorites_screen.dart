@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import '../services/database_service.dart';
 import '../models/item_model.dart';
 import 'detail_screen.dart';
+
 class FavoritesScreen extends StatelessWidget {
   final String userId;
+
   FavoritesScreen({required this.userId});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +19,7 @@ class FavoritesScreen extends StatelessWidget {
             return Center(child: CircularProgressIndicator());
           }
           if (snapshot.hasError) {
-            return Center(child: Text('Ошибка загрузки данных'));
+            return Center(child: Text('Ошибка загрузки данных: ${snapshot.error}'));
           }
           final items = snapshot.data ?? [];
           if (items.isEmpty) {
@@ -31,7 +34,7 @@ class FavoritesScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => DetailScreen(item: item)),
+                    MaterialPageRoute(builder: (_) => DetailScreen(item: item, userId: userId)),
                   );
                 },
               );

@@ -27,9 +27,10 @@ class _AuthScreenState extends State<AuthScreen> {
       if (firebaseUser != null) {
         final userModel = UserModel.fromFirebase(firebaseUser);
         print('Пользователь вошел: ${userModel.email}');
+        final currentUser = FirebaseAuth.instance.currentUser;
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (_) => HomeScreen(userId: '',)),
+          MaterialPageRoute(builder: (_) => HomeScreen(userId: currentUser!.uid,)),
         );
       }
     } catch (e) {
@@ -50,10 +51,11 @@ class _AuthScreenState extends State<AuthScreen> {
       final User? firebaseUser = await AuthService.registerWithEmailAndPassword(email, password);
       if (firebaseUser != null) {
         final userModel = UserModel.fromFirebase(firebaseUser);
+        final currentUser = FirebaseAuth.instance.currentUser;
         print('Пользователь зарегистрирован: ${userModel.email}');
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (_) => HomeScreen(userId: '',)),
+          MaterialPageRoute(builder: (_) => HomeScreen(userId: currentUser!.uid,)),
         );
       }
     } catch (e) {

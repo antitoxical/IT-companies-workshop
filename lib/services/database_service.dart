@@ -7,45 +7,138 @@ class DatabaseService {
 
   // Добавление пользователя в Firestore
   static Future<void> addUser(UserModel user) async {
-    await _db.collection('users').doc(user.uid).set(user.toMap());
+    try {
+      await _db.collection('users').doc(user.uid).set(user.toMap());
+      print('Пользователь успешно добавлен');
+    } catch (e) {
+      print('Ошибка добавления пользователя: $e');
+    }
   }
 
   // Получение данных пользователя
-  static Future<Map<String, dynamic>?> getUser(String uid) async {
-    final doc = await _db.collection('users').doc(uid).get();
-    return doc.data();
+  static Future<Map<String, dynamic>?> getUser(String userId) async {
+    try {
+      final doc = await _db.collection('users').doc(userId).get();
+      return doc.data();
+    } catch (e) {
+      print('Ошибка загрузки данных пользователя: $e');
+      return null;
+    }
   }
 
   // Обновление данных пользователя
-  static Future<void> updateUser(String uid, Map<String, dynamic> data) async {
-    await _db.collection('users').doc(uid).update(data);
+  static Future<void> updateUser(String userId, Map<String, dynamic> data) async {
+    try {
+      await _db.collection('users').doc(userId).set(data, SetOptions(merge: true));
+      print('Данные пользователя успешно обновлены');
+    } catch (e) {
+      print('Ошибка обновления данных пользователя: $e');
+      throw Exception('Не удалось обновить данные пользователя: $e');
+    }
   }
 
-  // Добавление объекта в избранное
-  static Future<void> addToFavorites(String userId, String itemId) async {
-    await _db.collection('users').doc(userId).update({
-      'favorites': FieldValue.arrayUnion([itemId]),
-    });
+  // Проверка, находится ли элемент в избранном
+  static Future<bool> isFavorite(String userId, String itemId) async {
+    try {
+      final snapshot = await _db
+          .collection('users')
+          .doc(userId)
+          .collection('favorites')
+          .doc(itemId)
+          .get();
+
+      return snapshot.exists;
+    } catch (e) {
+      print('Ошибка проверки избранного: $e');
+      return false;
+    }
   }
 
-  // Удаление объекта из избранного
+  // Добавление элемента в избранное
+  static Future<void> addToFavorites(String userId, ItemModel item) async {
+    if (userId.isEmpty || item.id.isEmpty) {
+      throw Exception('Ошибка: userId или itemId не определены');
+    }
+
+    try {
+      await _db
+          .collection('users')
+          .doc(userId)
+          .collection('favorites')
+          .doc(item.id)
+          .set(item.toMap());
+      print('Элемент успешно добавлен в избранное');
+    } catch (e) {
+      print('Ошибка добавления в избранное: $e');
+      throw Exception('Не удалось добавить элемент в избранное: $e');
+    }
+  }
+
+  // Удаление элемента из избранного
   static Future<void> removeFromFavorites(String userId, String itemId) async {
-    await _db.collection('users').doc(userId).update({
-      'favorites': FieldValue.arrayRemove([itemId]),
-    });
+    try {
+      await _db
+          .collection('users')
+          .doc(userId)
+          .collection('favorites')
+          .doc(itemId)
+          .delete();
+      print('Элемент успешно удален из избранного');
+    } catch (e) {
+      print('Ошибка удаления из избранного: $e');
+    }
   }
 
   // Получение списка объектов
   static Future<List<ItemModel>> getItems() async {
-    final querySnapshot = await _db.collection('items').get();
-    return querySnapshot.docs.map((doc) => ItemModel.fromMap(doc.data(), doc.id)).toList();
+    try {
+      final querySnapshot = await _db.collection('items').get();
+      return querySnapshot.docs
+          .where((doc) => doc.data() != null) // Фильтруем документы с непустыми данными
+          .map((doc) => ItemModel.fromMap(doc.data()!)) // Преобразуем данные в модель
+          .toList();
+    } catch (e) {
+      print('Ошибка загрузки элементов: $e');
+      return [];
+    }
   }
 
   // Получение избранных объектов
   static Future<List<ItemModel>> getFavorites(String userId) async {
-    final userDoc = await _db.collection('users').doc(userId).get();
-    final favoriteIds = List<String>.from(userDoc.data()?['favorites'] ?? []);
-    final items = await _db.collection('items').where(FieldPath.documentId, whereIn: favoriteIds).get();
-    return items.docs.map((doc) => ItemModel.fromMap(doc.data(), doc.id)).toList();
+    try {
+      final snapshot = await _db
+          .collection('users')
+          .doc(userId)
+          .collection('favorites')
+          .get();
+
+      return snapshot.docs
+          .where((doc) => doc.data() != null) // Фильтруем документы с непустыми данными
+          .map((doc) => ItemModel.fromMap(doc.data()!)) // Преобразуем данные в модель
+          .toList();
+    } catch (e) {
+      print('Ошибка загрузки избранного: $e');
+      return [];
+    }
+  }
+
+  // Поток для избранных объектов
+  static Stream<List<ItemModel>> getFavoritesStream(String userId) {
+    return _db
+        .collection('users')
+        .doc(userId)
+        .collection('favorites')
+        .snapshots()
+        .map((snapshot) {
+      try {
+        return snapshot.docs
+            .where((doc) => doc.data() != null) // Фильтруем документы с непустыми данными
+            .map((doc) => ItemModel.fromMap(doc.data()!)) // Преобразуем данные в модель
+            .toList();
+      } catch (e) {
+        print('Ошибка загрузки избранного: $e');
+        return [];
+      }
+    });
   }
 }

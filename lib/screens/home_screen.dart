@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    _itemsFuture = DatabaseService.getItems();
+    _itemsFuture = DatabaseService.getItems(); // Загружаем элементы при инициализации
   }
 
   // Фильтрация объектов по названию
@@ -32,9 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   // Добавление объекта в избранное
-  Future<void> _addToFavorites(String itemId) async {
-    await DatabaseService.addToFavorites(widget.userId, itemId);
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Добавлено в избранное')));
+  Future<void> _addToFavorites(ItemModel item) async {
+    try {
+      await DatabaseService.addToFavorites(widget.userId, item);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Добавлено в избранное')));
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Ошибка добавления в избранное: $e')));
+    }
   }
 
   @override
@@ -69,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => ProfileScreen(userId: '',)),
+                MaterialPageRoute(builder: (_) => ProfileScreen(userId: widget.userId)),
               );
             },
           ),
@@ -82,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
             return Center(child: CircularProgressIndicator());
           }
           if (snapshot.hasError) {
-            return Center(child: Text('Ошибка загрузки данных'));
+            return Center(child: Text('Ошибка загрузки данных: ${snapshot.error}'));
           }
           final items = _filterItems(snapshot.data ?? []);
           if (items.isEmpty) {
@@ -97,10 +101,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => DetailScreen(item: item)),
+                    MaterialPageRoute(builder: (_) => DetailScreen(item: item, userId: widget.userId)),
                   );
                 },
-                onFavoriteTap: () => _addToFavorites(item.id),
+                onFavoriteTap: () => _addToFavorites(item),
               );
             },
           );
