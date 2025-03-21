@@ -19,13 +19,13 @@ Future<void> addItems() async {
       'description':
       'Крупнейшая российская IT-компания, предоставляющая услуги поиска, карт, такси и облачных сервисов.',
       'images': [
-        'https://sun9-27.userapi.com/impg/BpSTpBag0UwpxiMTNVWBkkRLXG4UM0IWyfFc4w/BVS6rnyXEe0.jpg?size=320x213&quality=96&crop=53,0,572,381&sign=418309d44ad605a8f809d926ad893ec0&type=album',
-        'https://yandex.by/images/search?text=%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D1%84%D0%BE%D1%82%D0%BE+%D0%BE%D1%84%D0%B8%D1%81%D0%B0&img_url=https%3A%2F%2Fimages.adsttc.com%2Fmedia%2Fimages%2F530a%2Fb7c3%2Fc07a%2F80c4%2F5f00%2F017f%2Flarge_jpg%2F_DSC_0060.jpg%3F1393211321&pos=6&rpt=simage&serp_list_type=all&stype=image&lr=157&parent-reqid=1740158889098551-5788739008072140912-balancer-l7leveler-kubr-yp-vla-248-BAL&source=serp',
-        'https://yandex.by/images/search?text=%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D1%84%D0%BE%D1%82%D0%BE+%D0%BE%D1%84%D0%B8%D1%81%D0%B0&img_url=http%3A%2F%2Fatrium.ru%2Fstorage%2Fapp%2Fmedia%2Fuploads%2F5fe%2F354%2F6b7%2F7.jpg&pos=0&rpt=simage&serp_list_type=all&stype=image&lr=157&parent-reqid=1740158889098551-5788739008072140912-balancer-l7leveler-kubr-yp-vla-248-BAL&source=serp',
-        'https://yandex.by/images/search?pos=19&from=tabbar&img_url=https%3A%2F%2Fcdn.javarush.com%2Fimages%2Farticle%2F905118f7-60eb-4ef9-8fe5-8df4fffc5d03%2F1024.jpeg&text=%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D1%84%D0%BE%D1%82%D0%BE+%D0%BE%D1%84%D0%B8%D1%81%D0%B0&rpt=simage&lr=157',
-        'https://yandex.by/images/search?pos=20&from=tabbar&img_url=https%3A%2F%2Favatars.mds.yandex.net%2Fget-altay%2F374295%2F2a0000015b17e007f38ab44da15c4ac508f2%2Forig&text=%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D1%84%D0%BE%D1%82%D0%BE+%D0%BE%D1%84%D0%B8%D1%81%D0%B0&rpt=simage&lr=157',
-        'https://yandex.by/images/search?pos=21&from=tabbar&img_url=https%3A%2F%2Fsvetoalliance.ru%2Fimages%2FPortfolio%2FOficce_Moscow_5%2Fand.jpg&text=%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D1%84%D0%BE%D1%82%D0%BE+%D0%BE%D1%84%D0%B8%D1%81%D0%B0&rpt=simage&lr=157',
-        'https://yandex.by/images/search?pos=25&from=tabbar&img_url=https%3A%2F%2Fsun9-22.userapi.com%2FqwPosyRL0v_Aw9SMx33G1FS6vWTXJJ4R6PLUBQ%2FrUiWX0sQfvs.jpg&text=%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D1%84%D0%BE%D1%82%D0%BE+%D0%BE%D1%84%D0%B8%D1%81%D0%B0&rpt=simage&lr=157',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF0GALj-9VGLL4HBjh92Y8W26c3c3kWwCmDw&s',
+        'https://www.gazeta.uz/media/img/2024/07/tk20vf17204152077436_l.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3A9sWtwbYIyUnVnI1F1EAZucC5gcWc6DsYA&s',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFrpzzXbRr4B7S8piiRI74MXq3-LvG57PKfw&s',
+        'https://music.yandex.com/pages/main/i/og/home_com.png?webp=false',
+        'https://i.pinimg.com/564x/6d/7e/ef/6d7eef905c5adf624002d48053237aa7.jpg',
+        'https://s0.rbk.ru/v6_top_pics/media/img/4/74/755708064145744.jpeg',
       ],
     },
     {
@@ -34,13 +34,13 @@ Future<void> addItems() async {
       'description':
       'Одна из крупнейших IT-компаний России, владеющая почтовыми сервисами, соцсетями и игровыми проектами.',
       'images': [
-        'https://yandex.by/images/search?text=mail+ru&pos=23&isize=small&rpt=simage&img_url=https%3A%2F%2Fstatic.tildacdn.com%2Ftild3363-6537-4333-b636-616131366330%2FCopy_of_lacrimosaass.png&from=tabbar&iorient=square&lr=157',
-        'https://yandex.by/images/search?text=mail+ru+%D1%84%D0%BE%D1%82%D0%BE+%D0%BE%D1%84%D0%B8%D1%81%D0%B0&pos=12&rpt=simage&img_url=https%3A%2F%2Fmedia.rbcdn.ru%2Fmedia%2Fnews%2Fmailru-groupoffice-13.jpg&from=tabbar&lr=157',
-        'https://yandex.by/images/search?text=mail+ru+%D1%84%D0%BE%D1%82%D0%BE+%D0%BE%D1%84%D0%B8%D1%81%D0%B0&pos=20&rpt=simage&img_url=http%3A%2F%2Fi.pinimg.com%2Foriginals%2F7e%2F85%2F4c%2F7e854c3337c2dff15e8f85ff47abc55f.jpg&from=tabbar&lr=157',
-        'https://yandex.by/images/search?text=mail+ru+%D1%84%D0%BE%D1%82%D0%BE+%D0%BE%D1%84%D0%B8%D1%81%D0%B0&pos=27&rpt=simage&img_url=https%3A%2F%2Fwww.signbusiness.ru%2Fupload%2Fresize_cache%2Fiblock%2Fff1%2F800_800_1%2FIMG_20190821_215103.jpg&from=tabbar&lr=157',
-        'https://yandex.by/images/search?p=1&text=mail+ru+%D1%84%D0%BE%D1%82%D0%BE+%D0%BE%D1%84%D0%B8%D1%81%D0%B0&pos=5&rpt=simage&img_url=https%3A%2F%2Fsun9-20.userapi.com%2FGK1ozIrKnOuForHwGZjhCqgc5gZCEZCnf-VI4w%2F2vhbfBIt6N4.jpg&from=tabbar&lr=157',
-        'https://yandex.by/images/search?p=2&text=mail+ru+%D1%84%D0%BE%D1%82%D0%BE+%D0%BE%D1%84%D0%B8%D1%81%D0%B0&pos=5&rpt=simage&img_url=https%3A%2F%2F1prime.ru%2Fimages%2F83240%2F81%2F832408180.jpg&from=tabbar&lr=157',
-        'https://yandex.by/images/search?p=2&text=mail+ru+%D1%84%D0%BE%D1%82%D0%BE+%D0%BE%D1%84%D0%B8%D1%81%D0%B0&pos=14&rpt=simage&img_url=https%3A%2F%2Fincrussia.ru%2Fwp-content%2Fuploads%2F2020%2F01%2FTASS_32000013-1.jpg&from=tabbar&lr=157',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Mail.Ru_Logo_2018.svg/2560px-Mail.Ru_Logo_2018.svg.png',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCQZhSQs7DYAQF1v4nSwYQBi6xPlhiCv2NFg&s',
+        'https://s3-eu-central-1.amazonaws.com/news.pr-cy.ru/49127/images/e11c6e42c7aa83f2d92fd8977324ce6e.jpg',
+        'https://paradigm.mail.ru/notionStatic/df48344a-82f9-4507-8ea1-b0f945de4a3b.png',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUxueorHtqJqjdNrAaFbZqNeHFy5NRuNAEkA&s',
+        'https://cdn5.vedomosti.ru/image/2019/10/mnj4o/original-tcz.jpg',
+        'https://corpmedia.ru/images/cache/320x200/00/21/8546.jpg',
       ],
     },
     {
@@ -49,7 +49,13 @@ Future<void> addItems() async {
       'description':
       'Международная компания, специализирующаяся на разработке антивирусного ПО и кибербезопасности.',
       'images': [
-        'https://yandex.by/images/search?text=kaspersky+logo&pos=3&isize=small&rpt=simage&img_url=https%3A%2F%2Fpapik.pro%2Fuploads%2Fposts%2F2022-01%2F1643636204_14-papik-pro-p-kasperskii-logotip-17.png&from=tabbar&lr=157&iorient=square',
+        'https://allsoft.by/upload/programs_pictograms/0d5/0d552f8686fe0afd01e79957d9a5917c.png',
+        'https://media.kasperskydaily.com/wp-content/uploads/sites/90/2019/07/22155726/kaspersky-rebranding-in-details-1.jpg',
+        'https://media.kasperskydaily.com/wp-content/uploads/sites/90/2019/06/04175201/kaspersky-blog-default-featured.jpg',
+        'https://www.mysoft.by/upload/iblock/321/coum84g214y8cq082xr7acvb57wp4npx.jpg',
+        'https://t-sputnik.ru/upload/iblock/345/3455ee7030204e7ed48f4dd9c5e26053.png',
+        'https://www.karma-group.ru/upload/iblock/c49/kasperski-lab.jpg',
+        'https://i.guim.co.uk/img/media/c3c79938b8d55805b57edca50a07718f2e8c1177/0_442_5310_3189/master/5310.jpg?width=465&dpr=1&s=none&crop=none',
       ],
     },
     {
@@ -58,7 +64,13 @@ Future<void> addItems() async {
       'description':
       'Компания, занимающаяся разработкой решений для обработки текста и анализа данных.',
       'images': [
-        'https://yandex.by/images/search?text=%D1%84%D0%B8%D0%B8%D0%BD%D0%BD&pos=2&isize=small&rpt=simage&img_url=https%3A%2F%2Fstatic.ict.moscow%2Ffiles%2Fproductcard%2Flogo%2F43007709_2297722763574379_1425452134614171648_n%2520%25282%2529_0.png&from=tabbar&iorient=square&lr=157',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpQMT3G_0wdY2FJZsVYgovJJupCfJX_HOtLA&s',
+        'https://www.softmagazin.ru/upload/iblock/898/8984e8c284b1c82ace34b2275e439471.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1T5hY3IzkerMzDFOjRBBxMwwvpnGinBC4xw&s',
+        'https://cdn.forbes.ru/forbes-static/new/2024/10/TASS-28095240-copy-66fc08a592c5e.jpg',
+        'https://static.cnews.ru/img/news/2023/06/22/abbii_700.jpg',
+        'https://s0.rbk.ru/v6_top_pics/media/img/9/40/347278068126409.jpeg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Bf_PE1ECylaA9hiQtfBrgmN2hCkOO3WqKg&s',
       ],
     },
     {
@@ -67,7 +79,13 @@ Future<void> addItems() async {
       'description':
       'Компания, разрабатывающая программное обеспечение для бухгалтерии и бизнеса.',
       'images': [
-        'https://yandex.by/images/search?text=1%D1%81&pos=4&isize=small&rpt=simage&img_url=https%3A%2F%2Fthechronicle.ru%2Fwp-content%2Fuploads%2Ff%2Ff%2Fd%2Fffdba42780d9b75089a2c3a656bae368.png&from=tabbar&lr=157&iorient=square',
+        'https://www.bsut.by/images/MainMenuFiles/ObUniversitete/Podrazdeleniya/OIT/LOGO.png',
+        'https://wizard-c.ru/wp-content/uploads/2023/05/001.jpg',
+        'https://isbel.by/wp-content/uploads/2021/04/1%D1%81.png',
+        'https://www.1pro.by/upload/iblock/12e/12ec1b80ab73ccbf7a7cbe685eb8b095.png',
+        'https://static.cnews.ru/galleries/2024/11/21/nesterov_600x600.jpeg',
+        'https://prosoft.by/wp-content/uploads/2019/06/1spredpriyatie-8.-wms-avtomatizacziya-sklada.jpg',
+        'https://profxp.ru/upload/iblock/09e/gwpmlm0bl898zsyqa7k9ks5c7tnpg7uv.png',
       ],
     },
     {
@@ -76,7 +94,7 @@ Future<void> addItems() async {
       'description':
       'Финтех-компания, предоставляющая банковские и инвестиционные услуги через цифровые платформы.',
       'images': [
-        'https://yandex.by/images/search?text=%D1%82%D0%B8%D0%BD%D1%8C%D0%BA%D0%BE%D1%84%D1%84&pos=7&isize=small&rpt=simage&img_url=https%3A%2F%2Fsun9-38.userapi.com%2Fimpg%2FZX6CGl8uaANMW9Km_4wXxbmNWM_DNTBNYD8DLQ%2F1UPNPTMDvFc.jpg%3Fsize%3D1080x558%26quality%3D96%26sign%3D42e2a8d0d992c26b3aa4900518b738a4%26c_uniq_tag%3DAlt1Xlp6mQPUJdCfHyCqUVK5xPz2b52uPbbYm39amvs%26type%3Dalbum&from=tabbar&lr=157&iorient=square',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS29VXHpLYCHXXsDM2PL4QqhoS-kk_AYY4yg&s',
       ],
     },
     {
@@ -85,7 +103,7 @@ Future<void> addItems() async {
       'description':
       'Крупнейший банк России, активно развивающий IT-направление и экосистему цифровых сервисов.',
       'images': [
-        'https://yandex.by/images/search?text=%D1%81%D0%B1%D0%B5%D1%80&pos=17&isize=small&rpt=simage&img_url=https%3A%2F%2Fstatic.tildacdn.com%2Ftild6632-6430-4066-b661-643863376162%2F_.png&from=tabbar&iorient=square&lr=157',
+        'https://static.rustore.ru/imgproxy/9dhjp-pQPvmfYpc90hiqWQE9mUBqhWqtgvHzNkpXFY0/preset:app_card_icon/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvNDYyMjcxL2NvbnRlbnQvSUNPTi9mMWIzYzY4YS1iNzM0LTQ4Y2UtYjYyZi00OTAyMDhkM2ZhMGUucG5n.webp',
       ],
     },
     {
@@ -94,7 +112,7 @@ Future<void> addItems() async {
       'description':
       'Ведущий телекоммуникационный оператор России, предоставляющий услуги связи и IT-решения.',
       'images': [
-        'https://yandex.by/images/search?text=%D1%80%D0%BE%D1%81%D1%82%D0%B5%D0%BB%D0%B5%D0%BA%D0%BE%D0%BC&pos=0&isize=small&rpt=simage&img_url=https%3A%2F%2Fxn--80aaacvakkq6ab9ayef.xn--p1ai%2Fschoolbook%2Ftextbook%2Fmodule_6%2Frostelecom.png&from=tabbar&lr=157&iorient=square',
+        'https://habrastorage.org/getpro/moikrug/uploads/company/717/596/287/logo/medium_565ce8678920c5a28c3cf4977efb6408.png',
       ],
     },
     {
@@ -103,7 +121,7 @@ Future<void> addItems() async {
       'description':
       'Компания-разработчик и ИТ‑интегратор систем, программно-аппаратных комплексов и уникальных решений, представленный на рынке ИТ‑услуг.',
       'images': [
-        'https://yandex.by/images/search?text=cesca+&pos=23&isize=small&rpt=simage&img_url=https%3A%2F%2Fstatic.tildacdn.com%2Ftild6435-3535-4661-a333-333130613230%2F4.png&from=tabbar&lr=157&iorient=square',
+        'https://habrastorage.org/getpro/moikrug/uploads/company/100/007/917/0/logo/medium_83b5009e040969ee7b60362ad7426573.jpeg',
       ],
     },
     {
@@ -113,7 +131,7 @@ Future<void> addItems() async {
       'Компания, специализирующаяся на защите информационных систем и предотвращении кибератак.',
 
       'images': [
-      'https://yandex.by/images/search?text=positive+technologies+%D0%BE%D1%84%D0%B8%D1%81&pos=5&isize=small&rpt=simage&img_url=https%3A%2F%2Fcisoclub.ru%2F_ipx%2Ff_webp%2Cq_99%2Fwp-content%2Fuploads%2F2021-11-17_18-38-39-640x357.jpg&from=tabbar&lr=157&iorient=square',
+        'https://habrastorage.org/getpro/moikrug/uploads/company/100/004/467/5/logo/big_a7cbbb58f99396a79fd6c6ea317799f7.jpg',
       ],},
     {
       'id': '11',
@@ -121,7 +139,7 @@ Future<void> addItems() async {
       'description':
       'Разработчик решений для резервного копирования и киберзащиты данных.',
       'images': [
-        'https://yandex.by/images/search?text=acronis+%D0%BE%D1%84%D0%B8%D1%81&pos=2&isize=small&rpt=simage&img_url=https%3A%2F%2Fchannellife.com.au%2Fuploads%2Fstory%2F2018%2F03%2F06%2Fcompatible_Screen_Shot_2018-03-05_at_11.jpg&from=tabbar&lr=157&iorient=square',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLbCYffMgiiMwWAZdenlZU4mf3qpmFMyGaPw&s',
       ], },
     {
       'id': '12',
@@ -129,7 +147,7 @@ Future<void> addItems() async {
       'description':
       'Компания, создающая программное обеспечение для виртуализации и управления серверами.',
       'images': [
-        'https://yandex.by/images/search?text=parallels+%D0%BE%D1%84%D0%B8%D1%81&pos=4&isize=small&rpt=simage&img_url=https%3A%2F%2Ffastly.4sqi.net%2Fimg%2Fgeneral%2F200x200%2F9VemgIfUdz2bEc0O1G1uvYUZ2rmCZ6c85tszAHVNMTw.jpg&from=tabbar&lr=157&iorient=square',
+        'https://store-images.s-microsoft.com/image/apps.53032.41129e2f-98ba-4346-a177-64b6f3bdf829.5a21cba0-c45d-4fc1-b8ad-d7e65d581e2f.f918b05f-fcbc-447b-80a6-60b011162b43',
       ],  },
     {
       'id': '13',
@@ -137,7 +155,7 @@ Future<void> addItems() async {
       'description':
       'Разработчик инструментов для программистов, таких как IntelliJ IDEA и PyCharm.',
       'images': [
-        'https://yandex.by/images/search?text=jetbrains+%D0%BE%D1%84%D0%B8%D1%81&pos=15&isize=small&rpt=simage&img_url=https%3A%2F%2Fdom.com.cy%2Fupload%2Fiblock%2Fe7d%2Fe7d186c8ee1525dedb597e0998d47f97.jpg&from=tabbar&lr=157&iorient=square',
+        'https://pbs.twimg.com/profile_images/1790416612660592646/icx8Y2tA_400x400.png',
       ],  },
     {
       'id': '14',
@@ -145,7 +163,7 @@ Future<void> addItems() async {
       'description':
       'Социальная сеть и экосистема цифровых сервисов, включая музыку, игры и образование.',
       'images': [
-      'https://yandex.by/images/search?text=%D0%B2%D0%BA&pos=36&isize=small&rpt=simage&img_url=https%3A%2F%2Ffiles.redbasset.tech%2Fredbasset%2Fepisode_cover%2F365%2F761%2F27558%2F1653388739734_fbeac3eb_dda2_494e_8ccd_4e1544b4a9f2.jpg&from=tabbar&lr=157&iorient=square',
+        'https://cdn.forbes.ru/forbes-static/new/2022/02/vk-621a46b20b3e6.jpg',
       ],  },
     {
       'id': '15',
@@ -153,7 +171,7 @@ Future<void> addItems() async {
       'description':
       'Российский онлайн-ритейлер, предоставляющий широкий ассортимент товаров.',
       'images': [
-        'https://yandex.by/images/search?text=ozon+%D0%BE%D1%84%D0%B8%D1%81&pos=8&isize=small&rpt=simage&img_url=https%3A%2F%2Fi8.photo.2gis.com%2Fimages%2Fbranch%2F0%2F30258560095322064_465a.jpg&from=tabbar&lr=157&iorient=square',
+        'https://ir-3.ozone.ru/s3/multimedia-1-r/c1000/7179992295.jpg',
       ], },
     {
       'id': '16',
@@ -161,7 +179,7 @@ Future<void> addItems() async {
       'description':
       'Крупнейшая маркетплейс-платформа в России, специализирующаяся на продаже одежды и товаров.',
       'images': [
-        'https://yandex.by/images/search?p=2&text=wildberries+%D0%BE%D1%84%D0%B8%D1%81&pos=19&isize=small&rpt=simage&img_url=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fshop-sign-wildberries-international-online-store-clothes-shoes-shop-wildberries-international-online-store-228212477.jpg&from=tabbar&lr=157&iorient=square',
+        'https://habrastorage.org/getpro/moikrug/uploads/company/100/004/679/1/logo/big_52d6473a9db6fc51ff16b12c9c83e8bb.jpg',
       ], },
     {
       'id': '17',
@@ -169,7 +187,7 @@ Future<void> addItems() async {
       'description':
       'Компания, предоставляющая платежные решения для игровой индустрии.',
       'images': [
-        'https://yandex.by/images/search?text=xsolla+%D0%BE%D1%84%D0%B8%D1%81&pos=2&isize=small&rpt=simage&img_url=https%3A%2F%2Fv-kurse.ru%2Fwp-content%2Fuploads%2F2021%2F10%2Forigin.jpg&from=tabbar&lr=157&iorient=square',
+        'https://upload.wikimedia.org/wikipedia/commons/b/b7/Xsolla-main.jpg',
       ], },
     {
       'id': '18',
@@ -177,7 +195,7 @@ Future<void> addItems() async {
       'description':
       'Финтех-компания, предоставляющая платежные и финансовые сервисы.',
       'images': [
-      'https://yandex.by/images/search?text=qiwi+%D0%BE%D1%84%D0%B8%D1%81&pos=1&isize=small&rpt=simage&img_url=http%3A%2F%2Fnefakt.info%2Fwp-content%2Fuploads%2F2016%2F07%2Fqiwi-i-skrill-ustranili-vse-narushenija_1.jpg&from=tabbar&lr=157&iorient=square',
+        'https://play-lh.googleusercontent.com/ComSFGw8EUKsS8PhN9pTuMHuYaNxgANEWAkCr8BVr9Dsi6vZB-ChgHYmizpJaatRjbM',
       ], },
     {
       'id': '19',
@@ -185,7 +203,7 @@ Future<void> addItems() async {
       'description':
       'Крупнейшая розничная сеть электроники и бытовой техники в России.',
       'images': [
-        'https://yandex.by/images/search?text=mvideo+%D0%BE%D1%84%D0%B8%D1%81&pos=11&isize=small&rpt=simage&img_url=https%3A%2F%2Fsun9-29.userapi.com%2Fimpg%2FeaXvB5L0xmGvLQOlCEbR2Og-nsCy-AqgmTWTVA%2FPkFzkFbfaUM.jpg%3Fsize%3D933x634%26quality%3D95%26sign%3Db58c9c23309fda1f7b9139984b6d3f49%26c_uniq_tag%3DQKRF2v1zxwt2exQPv1v3_94yC7ynGLa9XmQsIo16t8w%26type%3Dalbum&from=tabbar&lr=157&iorient=square',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9ExsKMkhk5VIRlyJ3hNXAD6ggnCJT1zqDRg&s',
       ], },
     {
       'id': '20',
@@ -193,7 +211,7 @@ Future<void> addItems() async {
       'description':
       'IT-компания, предоставляющая решения для цифровой трансформации бизнеса.',
       'images': [
-      'https://yandex.by/images/search?text=softline+%D0%BE%D1%84%D0%B8%D1%81&pos=14&isize=small&rpt=simage&img_url=https%3A%2F%2Favatars.dzeninfra.ru%2Fget-zen_doc%2F108343%2Fpub_64ecde348aa4fd1f15b93812_64ece170138a636fbbb3c82e%2Fscale_1200&from=tabbar&lr=157&iorient=square',
+        'https://yt3.googleusercontent.com/yLBkCUJGv_DmLm1WdUdWmfIZI0n8bxAjD4iaQvQ6gZ4w1trqKW2Wp43TbjfBZYlH6-ZsfbDeCA=s900-c-k-c0x00ffffff-no-rj',
       ], },
     {
       'id': '21',
@@ -201,90 +219,80 @@ Future<void> addItems() async {
       'description':
       'Одна из крупнейших IT-компаний Беларуси, предоставляющая услуги по разработке программного обеспечения и консалтингу.',
       'images': [
-        'https://yandex.by/images/search?text=epam+systems&pos=1&isize=small&rpt=simage&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7b%2FEPAM_logo.svg%2F1200px-EPAM_logo.svg.png&from=tabbar&lr=157&iorient=square',
-      ],
-    },
+        'https://play-lh.googleusercontent.com/L3w73ZSvHAU3C6PmPWeuqKEHe67igSj5Ahovxlf0vBSdWi-31_PrLbHBHoSwmzAVzw',
+      ], },
     {
       'id': '22',
       'name': 'Wargaming',
       'description':
       'Компания, специализирующаяся на разработке многопользовательских онлайн-игр, таких как World of Tanks.',
       'images': [
-        'https://yandex.by/images/search?text=wargaming&pos=1&isize=small&rpt=simage&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F8b%2FWargaming.net_logo.svg%2F1200px-Wargaming.net_logo.svg.png&from=tabbar&lr=157&iorient=square',
-      ],
-    },
+        'https://play-lh.googleusercontent.com/9KpJ5xswo80BWJ-GJyb9zRIHjORMkNCe4Eq1hKkEz8XHEAIQMEHMLzc30Rpe8Er4C7o',
+      ], },
     {
       'id': '23',
       'name': 'Viber Media',
       'description':
       'Компания, разработавшая популярное приложение для обмена сообщениями и звонков Viber.',
       'images': [
-        'https://yandex.by/images/search?text=viber&pos=1&isize=small&rpt=simage&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7b%2FViber_logo.svg%2F1200px-Viber_logo.svg.png&from=tabbar&lr=157&iorient=square',
-      ],
-    },
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlnn8Ff0gZFTT2n82mHNZjLW-qHL0qwkeikA&s',
+      ], },
     {
       'id': '24',
       'name': 'BelHard',
       'description':
       'Группа компаний, предоставляющая IT-услуги, включая разработку программного обеспечения и аутсорсинг.',
       'images': [
-        'https://yandex.by/images/search?text=belhard&pos=1&isize=small&rpt=simage&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F8b%2FBelHard_logo.svg%2F1200px-BelHard_logo.svg.png&from=tabbar&lr=157&iorient=square',
-      ],
-    },
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpOiHACnyYlACnnOEdIxYCgSgp0WnVtTGBmw&s',
+      ], },
     {
       'id': '25',
       'name': 'Itransition',
       'description':
       'Компания, предоставляющая услуги по разработке программного обеспечения, ИТ-консалтингу и аутсорсингу.',
       'images': [
-        'https://yandex.by/images/search?text=itransition&pos=1&isize=small&rpt=simage&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7b%2FItransition_logo.svg%2F1200px-Itransition_logo.svg.png&from=tabbar&lr=157&iorient=square',
-      ],
-    },
+        'https://media.licdn.com/dms/image/v2/C4D0BAQFvejl3pZ83Tg/company-logo_200_200/company-logo_200_200/0/1630530813963/itransition_logo?e=2147483647&v=beta&t=rMiWai8Pf7agJdpylDYzJ6Pt-YKciwkNlm7FyI1jln4',
+      ], },
     {
       'id': '26',
       'name': 'Intetics',
       'description':
       'IT-компания, специализирующаяся на разработке программного обеспечения, тестировании и поддержке.',
       'images': [
-        'https://yandex.by/images/search?text=intetics&pos=1&isize=small&rpt=simage&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F8b%2FIntetics_logo.svg%2F1200px-Intetics_logo.svg.png&from=tabbar&lr=157&iorient=square',
-      ],
-    },
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqeVCMKC5DmP6TogSP5509u1iVjzmNIDUqZg&s',
+      ], },
     {
       'id': '27',
       'name': 'ScienceSoft',
       'description':
       'Компания, предоставляющая услуги по разработке программного обеспечения и ИТ-консалтингу.',
       'images': [
-        'https://yandex.by/images/search?text=sciencesoft&pos=1&isize=small&rpt=simage&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7b%2FScienceSoft_logo.svg%2F1200px-ScienceSoft_logo.svg.png&from=tabbar&lr=157&iorient=square',
-      ],
-    },
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr1EctSN_ykiJNVSf11EyUmKPVPGvpqemBQQ&s',
+      ], },
     {
       'id': '28',
       'name': 'SolbegSoft',
       'description':
       'Компания, занимающаяся разработкой программного обеспечения и предоставлением IT-услуг.',
       'images': [
-        'https://yandex.by/images/search?text=solbegsoft&pos=1&isize=small&rpt=simage&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F8b%2FSolbegSoft_logo.svg%2F1200px-SolbegSoft_logo.svg.png&from=tabbar&lr=157&iorient=square',
-      ],
-    },
+        'https://media.licdn.com/dms/image/v2/C4D0BAQGh72Rrc18jjw/company-logo_200_200/company-logo_200_200/0/1648197854733/solbeg_logo?e=2147483647&v=beta&t=eYv4TCBd34Z1eDuGhsQ-_PPnv1NYSBuxX8BVfmXnkZo',
+      ], },
     {
       'id': '29',
       'name': 'Synesis',
       'description':
       'Компания, специализирующаяся на разработке решений для видеонаблюдения, аналитики и безопасности.',
       'images': [
-        'https://yandex.by/images/search?text=synesis&pos=1&isize=small&rpt=simage&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7b%2FSynesis_logo.svg%2F1200px-Synesis_logo.svg.png&from=tabbar&lr=157&iorient=square',
-      ],
-    },
+        'https://habrastorage.org/getpro/moikrug/uploads/company/627/263/468/logo/medium_066872dd8766cfb1bc58acca90e573ed.png',
+      ], },
     {
       'id': '30',
       'name': 'Gismart',
       'description':
       'Компания, разрабатывающая мобильные приложения и игры, такие как Cool Goal! и Cleon.',
       'images': [
-        'https://yandex.by/images/search?text=gismart&pos=1&isize=small&rpt=simage&img_url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F8b%2FGismart_logo.svg%2F1200px-Gismart_logo.svg.png&from=tabbar&lr=157&iorient=square',
-      ],
-    },
+        'https://play-lh.googleusercontent.com/WbJFocJsMQbr_3wQn-ztLEhmWwSMDNfNcVT58mlus02IpBg7Vo5tlku9IsZYh0TyYFoV',
+      ], },
   ];
 
   for (var item in items) {
