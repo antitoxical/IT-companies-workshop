@@ -15,6 +15,7 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
+
 class _HomeScreenState extends State<HomeScreen> {
   late Future<List<ItemModel>> _itemsFuture;
   String _searchQuery = '';
@@ -49,9 +50,9 @@ class _HomeScreenState extends State<HomeScreen> {
           decoration: InputDecoration(
             hintText: 'Поиск по названию...',
             border: InputBorder.none,
-            hintStyle: TextStyle(color: Colors.white),
+            hintStyle: TextStyle(color: Colors.black),
           ),
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
           onChanged: (query) {
             setState(() {
               _searchQuery = query;
@@ -60,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.favorite),
+            icon: Icon(Icons.favorite, color:Colors.red),
             onPressed: () {
               Navigator.push(
                 context,

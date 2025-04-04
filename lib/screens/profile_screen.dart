@@ -4,6 +4,8 @@ import '../services/auth_service.dart';
 import '../services/database_service.dart';
 import '../models/user_model.dart';
 import '../screens/auth_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 class ProfileScreen extends StatefulWidget {
   final String userId;
 
@@ -20,10 +22,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   late TextEditingController _cityController;
   late TextEditingController _professionController;
   late TextEditingController _bioController;
-  late TextEditingController _genderController; // Замена Dropdown на TextField
-  late TextEditingController _maritalStatusController; // Замена Dropdown на TextField
+  late TextEditingController _genderController;
+  late TextEditingController _maritalStatusController;
 
-  // Состояния для проверки валидности полей
   bool _isNameValid = true;
   bool _isEmailValid = true;
   bool _isAddressValid = true;
@@ -40,10 +41,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
     _cityController = TextEditingController();
     _professionController = TextEditingController();
     _bioController = TextEditingController();
-    _genderController = TextEditingController(); // Инициализация нового контроллера
-    _maritalStatusController = TextEditingController(); // Инициализация нового контроллера
+    _genderController = TextEditingController();
+    _maritalStatusController = TextEditingController();
 
-    _loadUserData(); // Загружаем данные при инициализации
+    _loadUserData();
   }
 
   Future<void> _loadUserData() async {
@@ -57,8 +58,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           _cityController.text = userData['city'] ?? '';
           _professionController.text = userData['profession'] ?? '';
           _bioController.text = userData['bio'] ?? '';
-          _genderController.text = userData['gender'] ?? ''; // Загрузка данных для пола
-          _maritalStatusController.text = userData['maritalStatus'] ?? ''; // Загрузка данных для семейного положения
+          _genderController.text = userData['gender'] ?? '';
+          _maritalStatusController.text = userData['maritalStatus'] ?? '';
         });
       }
     } catch (e) {
@@ -73,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       _isAddressValid = _addressController.text.trim().isNotEmpty;
       _isCityValid = _cityController.text.trim().isNotEmpty;
       _isProfessionValid = _professionController.text.trim().isNotEmpty;
-      _isBioValid = _bioController.text.trim().length <= 500; // Максимальная длина биографии — 500 символов
+      _isBioValid = _bioController.text.trim().length <= 500;
     });
 
     return _isNameValid && _isEmailValid && _isAddressValid && _isCityValid && _isProfessionValid && _isBioValid;
@@ -93,8 +94,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         'city': _cityController.text.trim(),
         'profession': _professionController.text.trim(),
         'bio': _bioController.text.trim(),
-        'gender': _genderController.text.trim(), // Сохранение данных для пола
-        'maritalStatus': _maritalStatusController.text.trim(), // Сохранение данных для семейного положения
+        'gender': _genderController.text.trim(),
+        'maritalStatus': _maritalStatusController.text.trim(),
       });
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Профиль обновлен')));
     } catch (e) {
@@ -104,13 +105,64 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Future<void> _signOut(BuildContext context) async {
     try {
-      await FirebaseAuth.instance.signOut(); // Выход из аккаунта
-      Navigator.pushReplacement(
+      await FirebaseAuth.instance.signOut();
+      Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => AuthScreen()), // Переход на экран входа
+        MaterialPageRoute(builder: (context) => AuthScreen()),
+            (Route<dynamic> route) => false, // Удаляем все предыдущие маршруты
       );
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Ошибка выхода из аккаунта: $e')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Ошибка выхода из аккаунта: $e')),
+      );
+    }
+  }
+
+  Future<void> _deleteAccount(BuildContext context) async {
+    try {
+      // Подтверждение удаления аккаунта
+      final confirm = await showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Подтверждение'),
+          content: Text('Вы уверены, что хотите удалить аккаунт? Это действие нельзя отменить.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: Text('Отмена'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: Text('Удалить'),
+            ),
+          ],
+        ),
+      );
+
+      if (confirm != true) return;
+
+      // Удаление данных пользователя из Firestore
+      await DatabaseService.deleteUser(widget.userId);
+
+      // Удаление аккаунта из Firebase Authentication
+      final user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        await user.delete();
+      }
+
+      // Очистка локальных данных
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.clear();
+
+      // Перенаправление на экран входа
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => AuthScreen()),
+      );
+
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Аккаунт успешно удален')));
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Ошибка при удалении аккаунта: $e')));
     }
   }
 
@@ -132,7 +184,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Поле для имени
               TextField(
                 controller: _nameController,
                 decoration: InputDecoration(
@@ -141,20 +192,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               SizedBox(height: 16),
-
-              // Поле для email
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
                   labelText: 'Email',
                   errorText: _isEmailValid ? null : 'Введите корректный рабочий email',
                 ),
-                enabled: true
-                , // Email нельзя редактировать
+                enabled: false, // Email нельзя редактировать
               ),
               SizedBox(height: 16),
-
-              // Поле для адреса
               TextField(
                 controller: _addressController,
                 decoration: InputDecoration(
@@ -163,8 +209,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               SizedBox(height: 16),
-
-              // Поле для города
               TextField(
                 controller: _cityController,
                 decoration: InputDecoration(
@@ -173,8 +217,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               SizedBox(height: 16),
-
-              // Поле для профессии
               TextField(
                 controller: _professionController,
                 decoration: InputDecoration(
@@ -183,8 +225,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
               SizedBox(height: 16),
-
-              // Поле для описания
               TextField(
                 controller: _bioController,
                 decoration: InputDecoration(
@@ -194,25 +234,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 maxLines: 3,
               ),
               SizedBox(height: 16),
-
-              // Поле для пола (заменено на TextField)
               TextField(
                 controller: _genderController,
                 decoration: InputDecoration(labelText: 'Пол'),
               ),
               SizedBox(height: 16),
-
-              // Поле для семейного положения (заменено на TextField)
               TextField(
                 controller: _maritalStatusController,
                 decoration: InputDecoration(labelText: 'Семейное положение'),
               ),
               SizedBox(height: 16),
-
-              // Кнопка сохранения изменений
               ElevatedButton(
                 onPressed: _updateProfile,
                 child: Text('Сохранить изменения'),
+              ),
+              SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () => _deleteAccount(context),
+                style: ElevatedButton.styleFrom(iconColor: Colors.red),
+                child: Text('Удалить аккаунт', style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
@@ -229,8 +269,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
     _cityController.dispose();
     _professionController.dispose();
     _bioController.dispose();
-    _genderController.dispose(); // Освобождение ресурсов
-    _maritalStatusController.dispose(); // Освобождение ресурсов
+    _genderController.dispose();
+    _maritalStatusController.dispose();
     super.dispose();
   }
 }

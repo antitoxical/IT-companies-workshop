@@ -141,4 +141,29 @@ class DatabaseService {
       }
     });
   }
+
+  // Удаление пользователя
+  static Future<void> deleteUser(String userId) async {
+    try {
+      // Удаление всех избранных элементов пользователя
+      await _db
+          .collection('users')
+          .doc(userId)
+          .collection('favorites')
+          .get()
+          .then((snapshot) {
+        for (var doc in snapshot.docs) {
+          doc.reference.delete();
+        }
+      });
+
+      // Удаление основного документа пользователя
+      await _db.collection('users').doc(userId).delete();
+
+      print('Пользователь успешно удален');
+    } catch (e) {
+      print('Ошибка удаления пользователя: $e');
+      throw Exception('Не удалось удалить пользователя: $e');
+    }
+  }
 }
